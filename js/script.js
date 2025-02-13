@@ -107,12 +107,19 @@ $(document).ready(function(){
 	    $('.owl-item.active video').get(0).play();
   	})
 
+	$('#modalvideo1').on('shown.bs.modal', function () {
+		$(this).find('video')[0].play();
+	});
 	$('#modalvideo1').on('hidden.bs.modal', function () {
 		var video = $(this).find('video')[0];
 		if (video) {
 			video.pause();
 			video.currentTime = 0; // Reiniciar al inicio (opcional)
 		}
+	});
+
+	$('#modalvideo2').on('shown.bs.modal', function () {
+		$(this).find('video')[0].play();
 	});
 	$('#modalvideo2').on('hidden.bs.modal', function () {
 		var video = $(this).find('video')[0];
