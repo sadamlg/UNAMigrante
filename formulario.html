@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Emprendimiento</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, select, textarea, button { width: 100%; padding: 8px; margin: 5px 0; }
+        button { background: blue; color: white; border: none; cursor: pointer; }
+        button:disabled { background: gray; cursor: not-allowed; }
+        .aviso { font-size: 12px; color: #333; margin-top: 10px; }
+        .obligatorio { color: red; font-weight: bold; }
+        .mensaje-obligatorio { 
+            color: red; 
+            font-size: 14px; 
+            margin-bottom: 10px; 
+            text-align: center; 
+            font-weight: bold; 
+        }
+        .header {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+        }
+        .info-correo, .info-estudios, .info-curp {
+            background: #eef4ff;
+            padding: 10px;
+            border-left: 5px solid blue;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function validarCheckbox() {
+            var aceptar = document.getElementById("acepto_terminos");
+            var boton = document.getElementById("enviar");
+            boton.disabled = !aceptar.checked;
+        }
+    </script>
+    <!-- ==============================================
+    Favicons
+    =============================================== -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!--CSS VENDOR
+    =============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/animate.min.css">
+    <!-- ==============================================
+    Custom Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <script src="js/vendor/modernizr.min.js"></script>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro al Curso de Emprendimiento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo gris claro */
+            color: #444; /* Texto en gris oscuro */
+        }
+        .header {
+            background-color: #FF6600; /* Naranja */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-naranja {
+            background-color: #FF6600;
+            color: white;
+            border: none;
+        }
+        .btn-naranja:hover {
+            background-color: #e65c00;
+        }
+        .obligatorio {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!-- BACK TO TOP SECTION -->
+    
+<div class="section ">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="index.html">
+                        <img src="images/logo_izq.png" alt="" style="width: auto; height: auto;" />
+                    </a>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo_der.png" alt="" style=" width: auto; height: auto;" />
+                </a>
+            </div>
+        </div>
+
+    <div class="container">
+        <div class="header">
+            <h2>Emprendimiento. Una nueva opción para la empleabilidad.</h2>
+            <p>Si estás interesado en participar en este curso, por favor registra los datos solicitados para tu registro y a la brevedad recibirás la información complementaria.</p>
+            <p><strong>IMPORTANTE:</strong> Esta actividad se llevará a cabo del <strong>24 al 28 de febrero de 2025</strong> en un horario de <strong>18:00 a 20:00 horas (México)</strong> de manera virtual a través de Zoom.</p>
+            <p>¡Gracias por su participación!</p>
+        </div>
+
+        <h2 class="text-center mt-4">Registro al Curso de Emprendimiento</h2>
+
+        <p class="text-danger">Los campos marcados con <span class="obligatorio">*</span> son obligatorios.</p>
+
+        <div class="form-container">
+            <form action="/guardar.php" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Nombre: <span class="obligatorio">*</span></label>
+                    <input type="text" name="nombre" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Apellidos: <span class="obligatorio">*</span></label>
+                    <input type="text" name="apellidos" class="form-control" required>
+                </div>
+                <div class="alert alert-info mt-3">
+    <strong>Usted recibirá a través de un correo electrónico la siguiente información:</strong>
+    <ul class="mb-0">
+        <li>Temario del curso.</li>
+        <li>Fechas y horarios.</li>
+        <li>Link para ingresar al curso.</li>
+        <li>Constancia de participación (en caso de acreditar el curso).</li>
+    </ul>
+</div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Correo Electrónico: <span class="obligatorio">*</span></label>
+                    <input type="email" name="correo" class="form-control" required>
+                </div>
+<div class="alert alert-info mt-3">
+            <strong>Indique únicamente el nivel del que ya está titulado.</strong>  
+            <p>Ejemplo: si estudió la maestría pero no se tituló, coloque licenciatura.</p>
+        </div>
+                <div class="mb-3">
+                    <label class="form-label">Nivel de Estudios: <span class="obligatorio">*</span></label>
+                    <select name="nivel_estudios" class="form-select" required>
+                        <option value="Licenciatura">Licenciatura</option>
+                        <option value="Especialización">Especialización</option>
+                        <option value="Maestría">Maestría</option>
+                        <option value="Doctorado">Doctorado</option>
+                        <option value="No tengo grados de estudios">No tengo grados de estudios</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nacionalidad: <span class="obligatorio">*</span></label>
+                    <input type="text" name="nacionalidad" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Doble nacionalidad (opcional): </label>
+                    <input type="text" name="doble_nacionalidad" class="form-control">
+                </div>
+<div class="alert alert-info mt-3">
+            <strong>La CURP es un dato necesario para la emisión de las constancias a través del Sistema de Gestión de Constancias.</strong>  
+            <p>Usted puede conocer su CURP a través de:  
+                <a href="https://www.gob.mx/curp/" target="_blank"><strong>https://www.gob.mx/curp/</strong></a>
+            </p>
+        </div>
+                <div class="mb-3">
+                    <label class="form-label">CURP: <span class="obligatorio">*</span></label>
+                    <input type="text" name="curp" class="form-control" required pattern=".{18,18}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Código de identidad (si no tiene CURP):</label>
+                    <input type="text" name="codigo_identidad" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Rango de edad: <span class="obligatorio">*</span></label>
+                    <select name="rango_edad" class="form-select" required>
+                        <option value="Menos de 20 años">Menos de 20 años</option>
+                        <option value="21 a 30 años">21 a 30 años</option>
+                        <option value="31 a 40 años">31 a 40 años</option>
+                        <option value="41 a 50 años">41 a 50 años</option>
+                        <option value="Más de 50 años">Más de 50 años</option>
+                        <option value="Prefiero no compartir mi rango de edad">Prefiero no compartir mi rango de edad</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Sexo: <span class="obligatorio">*</span></label>
+                    <select name="sexo" class="form-select" required>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">¿Cómo se enteró del curso? <span class="obligatorio">*</span></label>
+                    <select name="medio_conocido" class="form-select" required>
+                        <option value="Amigo o conocido">Amigo o conocido</option>
+                        <option value="Página electrónica UNAM">Página electrónica UNAM</option>
+                        <option value="Por correo electrónico">Por correo electrónico</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">¿En qué otra temática le gustaría recibir capacitación?</label>
+                    <textarea name="tematica_interes" class="form-control"></textarea>
+                </div>
+<div class="aviso">
+            La información que usted comparte sirve para enviarle información sobre este Programa y futuras actividades académicas. La información es tratada con base en el aviso de privacidad de la UNAM y no será compartida con terceros fuera de las universidades organizadoras ni para otros fines que no sean académicos.
+        </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="acepto_terminos" name="acepto_terminos" required>
+                    <label class="form-check-label" for="acepto_terminos">
+                        <span class="obligatorio">He leído y acepto los términos.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-naranja w-100">Enviar</button>
+            </form>
+        </div>
+    </div>
+<div class="footer" data-background="images/fondo_footer.png">
+        <div class="content-wrap">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <div class="footer-item">
+                            <img src="images/logo_unamaccion.png" alt="logo bottom" class="logo-bottom">
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                Conócenos
+                            </div>
+                            
+                            <div class="row">
+                                
+                                    <ul class="list" style="color: white;">
+                                        <li><a href="about.html" title="About us" style="color: white;">UNAM</a></li>
+                                        <li><a href="couses.html" title="Couses"style="color: white;">Acerca de Espirítu en Acción</a></li>
+                                        <li><a href="testimonials.html" title="Testimonials"style="color: white;">Orientación Jurídica</a></li>
+                                        <li><a href="gallery.html" title="Gallery"style="color: white;">Salud Integral</a></li>
+                                        <li><a href="faq.html" title="Faq"style="color: white;">Educación para migrantes</a></li>
+                                    </ul>
+                                
+<!--
+                                <div class="col-sm-6 col-md-6">
+                                    <ul class="list">
+                                        <li><a href="our-team.html" title="Our Team">Our Team</a></li>
+                                        <li><a href="events.html" title="Events">Events</a></li>
+                                        <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                 DERECHOS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                Contáctanos
+                            </div>
+                            <ul class="list-info">
+                                <li>
+                                    <div class="info-icon"style="color: white;">
+                                        <span class="fa fa-map-marker"></span>
+                                    </div>
+                                    <div class="info-text"style="color: white;">Torre de Rectoría, Ciudad Universitaria, Del. Coyoacán C.P. 04510, Ciudad de México</div> </li>
+                                <li>
+                                    <div class="info-icon"style="color: white;">
+                                        <span class="fa fa-phone"></span>
+                                    </div>
+                                    <div class="info-text"style="color: white;">(+52) 555 641X XXX</div>
+                                </li>
+                                <li>
+                                    <div class="info-icon"style="color: white;">
+                                        <span class="fa fa-envelope"></span>
+                                    </div>
+                                    <div class="info-text"style="color: white;">espiritu_accion@unam.mx</div>
+                                </li>
+<!--
+                                <li>
+                                    <div class="info-icon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </div>
+                                    <div class="info-text">Mon - Sat 09:00 - 17:00</div>
+                                </li>
+                                 DERECHOS -->
+                            </ul>
+
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3 col-md-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                Síguenos
+                            </div>
+                            <p class="info-text"style="color: white;">Síguenos en nuestras redes sociales y conoce más</p>
+                            <div class="sosmed-icon primary">
+                                <a href="https://www.facebook.com/UNAM.MX.Oficial"><i class="fa fa-facebook"></i></a> 
+                                <a href="https://x.com/UNAM_MX"><i class="fa fa-twitter"></i></a> 
+                                <a href="https://www.instagram.com/unam_mx"><i class="fa fa-instagram"></i></a> 
+                                <!--<a href="#"><i class="fa fa-pinterest"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- DERECHOS -->
+        <div class="fcopy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <p class="ftex">&copy; 2025 - Hecho en México, Universidad Nacional Autónoma de México (UNAM). Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma, requiere permiso previo por escrito de la institución.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/owl.carousel.js"></script>
+    <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+
+    <!-- SENDMAIL -->
+    <script src="js/vendor/validator.min.js"></script>
+    <script src="js/vendor/form-scripts.js"></script>
+    
+    <!-- MAIN JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+</html>

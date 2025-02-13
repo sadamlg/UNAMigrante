@@ -1,0 +1,6 @@
+= 1.0.1 =
+* Fixed dark mode color issue.
+* Fixed header height issue.
+
+= 1.0.0 =
+* Initial release 🚀
